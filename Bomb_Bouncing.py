@@ -242,7 +242,7 @@ class Run_game:
         game_over_text.color("DarkRed")
         game_over_text.hideturtle()
         game_over_text.write(f"\nGame Over! \n \nBomb hit the paddle\n \n{self.name}'s "
-                             f"Score: {self.score}", align="center", font=("Arial", 36, "bold"))
+                             f"score: {self.score}", align="center", font=("Arial", 36, "bold"))
         self.screen.mainloop()
 
     def end_out(self):
@@ -252,7 +252,7 @@ class Run_game:
         game_over_text.color("DarkRed")
         game_over_text.hideturtle()
         game_over_text.write(f"\nGame Over!\n \nYou missed the ball\n \n{self.name}'s "
-                             f"Score: {self.score}", align="center", font=("Arial", 36, "bold"))
+                             f"score: {self.score}", align="center", font=("Arial", 36, "bold"))
         self.screen.mainloop()
 
     def win(self):
