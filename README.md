@@ -1,5 +1,7 @@
 BOMB Bouncing Game
-BOMB Bouncing : The game controlling a paddle to bounce a ball, destroy barriers, avoid bombs, and collect bonuses that increase your score.
+BOMB Bouncing : The game controlling a paddle to bounce a ball, destroy barriers, avoid bombs, 
+                and collect bonuses that increase your score.
+
 
 # Game Components
 - Paddle: Controlled by the player using the arrow keys. The paddle is used to bounce the ball back into play.
@@ -8,16 +10,18 @@ BOMB Bouncing : The game controlling a paddle to bounce a ball, destroy barriers
 - Bomb: If the ball collides with a bomb, the game ends.
 - Bonus: Collecting a bonus adds extra points to the player's score.
 
+
 # Usage
 1. The player enters their name.
 2. The player controls a paddle using the left and right arrow keys.
 3. The ball bounces around the screen and can destroy barriers.
-4. When a barrier is destroyed, there is a 30% chance of dropping a bomb or a bonus.
+4. When a barrier is destroyed, there is a 30% chance of dropping a bomb and a bonus.
 5. If the ball falls below the paddle, the game ends.
 6. If the player successfully destroys all barriers, they win the game.
 
+
 # Sample usage
-https://youtu.be/MG0BmdIppSw?si=qjgagjFlzOPN-NVX
+https://youtu.be/46AU6_g-ZU8
 
 
 # Class
@@ -57,16 +61,19 @@ https://youtu.be/MG0BmdIppSw?si=qjgagjFlzOPN-NVX
      - end_bomb(): Ends the game if a bomb collides with the paddle.
      - end_out(): Ends the game if the ball falls below the paddle.
 
----
 
 # UML Class Diagram
+picture: ![img.png](img.png)
+
+https://lucid.app/lucidchart/f79ebc20-3cef-40e2-9b71-928daae31660/edit?viewport_loc=-431%2C-139%2C2961%2C1597%2CHWEp-vi-RSFO&invitationId=inv_9c2d6aa0-1eb0-4682-bed6-c01fd85609de
+
 
 +---------------------+             +---------------------+
-|       Paddle        |<------------|        Ball         |
+|       Paddle        | <---------- |        Ball         |
 +---------------------+             +---------------------+
-| - paddle: Turtle    |             | - ball: Turtle      |
-+---------------------+             | - dx: int           |
-| + __init__()        |             | - dy: int           |
+| + paddle: Turtle    |             | + ball: Turtle      |
++---------------------+             | + dx: int           |
+| + __init__()        |             | + dy: int           |
 | + move_left()       |             +---------------------+
 | + move_right()      |             | + __init__()        |
 +---------------------+             | + move()            |
@@ -80,7 +87,7 @@ https://youtu.be/MG0BmdIppSw?si=qjgagjFlzOPN-NVX
                                   +---------------------+
                                   |      Barrier        |
                                   +---------------------+
-                                  | - barrier: Turtle   |
+                                  | + barrier: Turtle   |
                                   +---------------------+
                                   | + __init__()        |
                                   | + hide()            |
@@ -93,10 +100,10 @@ https://youtu.be/MG0BmdIppSw?si=qjgagjFlzOPN-NVX
                     +---------------------+            +---------------------+
                     |        Bomb         |            |        Bonus        |
                     +---------------------+            +---------------------+
-                    | - bomb: Turtle      |            | - bonus: Turtle     |
-                    | - dy: int           |            | - dy: float         |
-                    +---------------------+            | - color: string     |
-                    | + __init__()        |            | - size: int         |
+                    | + bomb: Turtle      |            | + bonus: Turtle     |
+                    | + dy: int           |            | + dy: float         |
+                    +---------------------+            | + color: str        |
+                    | + __init__()        |            | + size: int         |
                     | + move()            |            +---------------------+
                     | + out_bounds()      |            | + __init__()        |
                     +---------------------+            | + move()            |
@@ -106,16 +113,16 @@ https://youtu.be/MG0BmdIppSw?si=qjgagjFlzOPN-NVX
 +---------------------+
 |         Run         |
 +---------------------+
-| - screen: Screen    |
-| - paddle: Paddle    |
-| - ball: Ball        |
-| - barriers: List    |
-| - bombs: List       |
-| - bonuses: List     |
-| - score: int        |
-| - score_display:    |
+| + screen: Screen    |
+| + paddle: Paddle    |
+| + ball: Ball        |
+| + barriers: List    |
+| + bombs: List       |
+| + bonuses: List     |
+| + score: int        |
+| + score_display:    |
 |    Turtle           |
-| - name: string      |
+| + name: str         |
 +---------------------+
 | + __init__()        |
 | + input_name()      |
@@ -130,9 +137,20 @@ https://youtu.be/MG0BmdIppSw?si=qjgagjFlzOPN-NVX
 | + win()             |
 +---------------------+
 
+
 # Installation
 1. Make sure you have Python installed on your system (You can download from : https://www.python.org/downloads/).
 2. Install the turtle module if not already installed (usually pre-installed with Python).
 3. Clone the repository : https://github.com/Natcha-limsuwan/Final_project.git
 4. Run the Bomb_Bouncing.py file to start the game.
 
+
+# Testing
+Run all code and play the game to ensure they work as expected.
+
+
+# Bugs
+Ball speed instability: The ball's speed may occasionally vary unexpectedly, causing the gameplay to feel less smooth
+                        (but I'm not sure it is because my laptop or code ).
+Ball can pass the paddle: Sometimes the ball may pass through the edge of the paddle, 
+                          especially when the paddle is near the edge.
